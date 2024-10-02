@@ -1,9 +1,10 @@
-export default function appendToEachArrayValue(array, appendString) {
-  const appArray = [];
-  for (const index of array) {
-    const val = index;
-    appArray.push(appendString + val);
+export default function createIteratorObject(report) {
+  let allEmployees = [];
+  for (const item of Object.values(report.allEmployees)) {
+    allEmployees = [
+      ...allEmployees,
+      ...item,
+    ];
   }
-
-  return appArray;
+  return allEmployees;
 }
